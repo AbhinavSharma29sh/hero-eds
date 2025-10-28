@@ -1,10 +1,10 @@
 {
   "mappings": [
-    "/content/aem-boilerplate/:/",
-    "/content/aem-boilerplate/configuration:/.helix/config.json",
-    "/content/aem-boilerplate/metadata:/metadata.json"
+    "/content/abhi-eds-poc/:/",
+    "/content/abhi-eds-poc/configuration:/.helix/config.json",
+    "/content/abhi-eds-poc/metadata:/metadata.json"
   ],
   "includes": [
-    "/content/aem-boilerplate/"
+    "/content/abhi-eds-poc/"
   ]
 }
