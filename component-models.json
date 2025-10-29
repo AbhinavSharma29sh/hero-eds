@@ -24,6 +24,40 @@
     ]
   },
   {
+    "id": "feature-card",
+    "fields": [
+      {
+        "component": "image",
+        "name": "image",
+        "label": "Image",
+        "value": "",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "title",
+        "label": "Title",
+        "value": "",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "description",
+        "label": "Description",
+        "value": "",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "classes",
+        "label": "Custom classes",
+        "value": "",
+        "valueType": "string",
+        "description": "Optional CSS classes for this card"
+      }
+    ]
+  },
+  {
     "id": "image",
     "fields": [
       {
