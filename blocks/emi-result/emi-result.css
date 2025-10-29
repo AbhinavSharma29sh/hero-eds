@@ -1,0 +1,61 @@
+.emi-result-wrapper {
+    padding: 20px;
+    background: #f9f9f9;
+    display: flex;
+    justify-content: center;
+}
+
+.emi-result-card {
+    background: #2c2c2e;
+    color: #fff;
+    border-radius: 12px;
+    padding: 32px 24px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 8px 24px rgb(0 0 0 / 15%);
+}
+
+.emi-result-label {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+    color: #ccc;
+}
+
+.emi-result-amount {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.emi-cta-btn {
+    display: inline-block;
+    background: #d32f2f;
+    color: #fff;
+    border: none;
+    padding: 14px 32px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    margin-bottom: 20px;
+    transition: background 0.2s;
+}
+
+.emi-cta-btn:hover {
+    background: #e53935;
+}
+
+.emi-bike-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.emi-bike-img {
+    width: 200px;
+    height: auto;
+    filter: drop-shadow(0 4px 12px rgb(0 0 0 / 30%));
+}

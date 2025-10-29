@@ -300,7 +300,7 @@
     ]
   },
   {
-    "id": "emi-calculator",
+    "id": "emi-title",
     "fields": [
       {
         "component": "text",
@@ -308,10 +308,48 @@
         "label": "Calculator Title",
         "value": "CALCULATE EMI AND KNOW YOUR GAINS",
         "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "emi-range",
+    "fields": [
+      {
+        "component": "text",
+        "name": "label",
+        "label": "Range Label",
+        "value": "",
+        "valueType": "string"
       },
       {
         "component": "text",
-        "name": "ctaText",
+        "name": "min",
+        "label": "Min Value",
+        "value": "",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "max",
+        "label": "Max Value",
+        "value": "",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "default",
+        "label": "Default Value",
+        "value": "",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "emi-result",
+    "fields": [
+      {
+        "component": "text",
+        "name": "text",
         "label": "CTA Button Text",
         "value": "CHECK LOAN OFFERS",
         "valueType": "string"

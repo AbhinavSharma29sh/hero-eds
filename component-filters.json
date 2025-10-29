@@ -18,7 +18,9 @@
       "fragment",
       "feature-card",
       "insight-panel",
-      "emi-calculator"
+      "emi-title",
+      "emi-range",
+      "emi-result"
     ]
   },
   {
