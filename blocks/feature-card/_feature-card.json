@@ -1,0 +1,59 @@
+{
+    "title": "Feature Card",
+    "id": "feature-card",
+    "fields": [
+        {
+            "component": "reference",
+            "valueType": "string",
+            "name": "image",
+            "label": "Image",
+            "multi": false
+        },
+        {
+            "component": "text",
+            "name": "imageAlt",
+            "label": "Alt Text",
+            "valueType": "string"
+        },
+        {
+            "component": "text",
+            "name": "title",
+            "label": "Title",
+            "valueType": "string"
+        },
+        {
+            "component": "richtext",
+            "name": "description",
+            "label": "Description",
+            "valueType": "string"
+        },
+        {
+            "component": "aem-content",
+            "name": "ctaLink",
+            "label": "CTA Link"
+        },
+        {
+            "component": "text",
+            "name": "ctaText",
+            "label": "CTA Text",
+            "valueType": "string"
+        }
+    ],
+    "plugins": {
+        "xwalk": {
+            "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                    "name": "Feature Card",
+                    "model": "feature-card",
+                    "image": "https://images.unsplash.com/photo-1602524206310-38f4f86e2ab7?w=800",
+                    "imageAlt": "Motorbike on highway",
+                    "title": "Hero XPulse 200",
+                    "description": "<p>The Hero XPulse 200 is built for adventure — designed for both city and off-road rides.</p>",
+                    "ctaLink": "https://www.heromotocorp.com/en-in/motorcycles/xpulse-200.html",
+                    "ctaText": "Explore Now"
+                }
+            }
+        }
+    }
+}
