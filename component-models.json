@@ -24,40 +24,6 @@
     ]
   },
   {
-    "id": "feature-card",
-    "fields": [
-      {
-        "component": "image",
-        "name": "image",
-        "label": "Image",
-        "value": "",
-        "valueType": "string"
-      },
-      {
-        "component": "text",
-        "name": "title",
-        "label": "Title",
-        "value": "",
-        "valueType": "string"
-      },
-      {
-        "component": "richtext",
-        "name": "description",
-        "label": "Description",
-        "value": "",
-        "valueType": "string"
-      },
-      {
-        "component": "text",
-        "name": "classes",
-        "label": "Custom classes",
-        "value": "",
-        "valueType": "string",
-        "description": "Optional CSS classes for this card"
-      }
-    ]
-  },
-  {
     "id": "image",
     "fields": [
       {
@@ -246,6 +212,48 @@
         "value": "",
         "label": "Text",
         "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "feature-card",
+    "fields": [
+      {
+        "component": "reference",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "name": "title",
+        "label": "Title",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "description",
+        "label": "Description",
+        "valueType": "string"
+      },
+      {
+        "component": "object",
+        "name": "cta",
+        "label": "CTA",
+        "collapsible": true,
+        "fields": [
+          {
+            "component": "aem-content",
+            "name": "link",
+            "label": "CTA Link"
+          },
+          {
+            "component": "text",
+            "name": "text",
+            "label": "CTA Text",
+            "valueType": "string"
+          }
+        ]
       }
     ]
   }
