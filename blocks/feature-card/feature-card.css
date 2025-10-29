@@ -1,47 +1,40 @@
-/* blocks/feature-card/feature-card.css */
-
 .feature-card-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 24px;
+    gap: 20px;
     justify-content: center;
     padding: 40px 20px;
-    background: transparent;
 }
 
 .feature-card {
-    background: #111;
-    color: #fff;
+    background: #fff;
     border-radius: 12px;
-    padding: 20px;
-    width: 280px;
-    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 4px 10px rgb(0 0 0 / 35%);
+    overflow: hidden;
+    width: 300px;
     text-align: center;
-    transition: transform .22s ease, box-shadow .22s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .feature-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.45);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgb(0 0 0 / 45%);
 }
 
 .feature-card-image img {
-    width: 72px;
-    height: 72px;
-    object-fit: cover;
-    border-radius: 50%;
-    display: block;
-    margin: 0 auto 14px;
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
 }
 
 .feature-card-title {
-    margin: 6px 0 10px;
-    font-size: 1.125rem;
-    font-weight: 700;
+    font-size: 1.3rem;
+    margin: 15px 0 10px;
+    color: #222;
 }
 
 .feature-card-description {
-    color: #d0d0d0;
     font-size: 0.95rem;
-    line-height: 1.45;
+    color: #555;
+    padding: 0 15px 20px;
 }
