@@ -279,29 +279,6 @@
         "multi": false
       },
       {
-        "component": "multiselect",
-        "name": "tags",
-        "label": "Tags",
-        "options": [
-          {
-            "name": "Technology",
-            "value": "tech"
-          },
-          {
-            "name": "Design",
-            "value": "design"
-          },
-          {
-            "name": "Strategy",
-            "value": "strategy"
-          },
-          {
-            "name": "Innovation",
-            "value": "innovation"
-          }
-        ]
-      },
-      {
         "component": "object",
         "name": "cta",
         "label": "CTA",
