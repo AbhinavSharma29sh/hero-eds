@@ -369,5 +369,38 @@
         "valueType": "string"
       }
     ]
+  },
+  {
+    "id": "emi-calculator",
+    "fields": [
+      {
+        "component": "text",
+        "name": "title",
+        "label": "Calculator Title",
+        "value": "CALCULATE EMI AND KNOW YOUR GAINS",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "buttontext",
+        "label": "Button Text",
+        "value": "CHECK LOAN OFFERS",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "buttonlink",
+        "label": "Button Link",
+        "value": "#",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "imageurl",
+        "label": "Bike Image URL",
+        "value": "",
+        "valueType": "string"
+      }
+    ]
   }
 ]
