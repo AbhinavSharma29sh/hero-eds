@@ -3,15 +3,20 @@ export default function decorate(block) {
 
   // Extract authored values
   const title = rows[0]?.textContent.trim() || 'CALCULATE EMI AND KNOW YOUR GAINS';
-  const rangesStr = rows[1]?.textContent.trim() || '10000-100000-80500|8-15-13|12-60-12';
+  const rangesStr = rows[1]?.textContent.trim() || '10000-100000|8-15|12-60';
   const ctaStr = rows[2]?.textContent.trim() || 'CHECK LOAN OFFERS|#';
   const bikeImageSrc = rows[3]?.querySelector('img')?.src || rows[3]?.textContent.trim() || 'https://bd.gaadicdn.com/processedimages/hero/splendor-plus/source/splendor-plus6409d99be0173.jpg';
 
-  // Parse ranges
+  // Parse ranges (min-max only, calculate default as middle)
   const [amountRange, rateRange, durationRange] = rangesStr.split('|');
-  const [minAmount, maxAmount, defaultAmount] = amountRange.split('-').map(Number);
-  const [minRate, maxRate, defaultRate] = rateRange.split('-').map(Number);
-  const [minDuration, maxDuration, defaultDuration] = durationRange.split('-').map(Number);
+  const [minAmount, maxAmount] = amountRange.split('-').map(Number);
+  const [minRate, maxRate] = rateRange.split('-').map(Number);
+  const [minDuration, maxDuration] = durationRange.split('-').map(Number);
+
+  // Calculate defaults (middle values)
+  const defaultAmount = Math.round((minAmount + maxAmount) / 2);
+  const defaultRate = ((minRate + maxRate) / 2).toFixed(1);
+  const defaultDuration = Math.round((minDuration + maxDuration) / 2);
 
   // Parse CTA
   const [buttonText, buttonLink] = ctaStr.split('|');
@@ -75,10 +80,10 @@ export default function decorate(block) {
 
   block.replaceChildren(wrapper);
 
-  // Update range slider fill dynamically
+  // Update range slider fill dynamically (red moves with slider)
   function updateRangeFill(slider) {
-    const value = ((slider.value - slider.min) / (slider.max - slider.min)) * 100;
-    slider.style.background = `linear-gradient(to right, #d32f2f 0%, #d32f2f ${value}%, #ddd ${value}%, #ddd 100%)`;
+    const percent = ((slider.value - slider.min) / (slider.max - slider.min)) * 100;
+    slider.style.background = `linear-gradient(to right, #d32f2f 0%, #d32f2f ${percent}%, #ddd ${percent}%, #ddd 100%)`;
   }
 
   function calculateEMI(principal, ratePA, months) {
@@ -103,11 +108,12 @@ export default function decorate(block) {
   const durationSlider = document.getElementById('durationRange');
   const durationInput = document.getElementById('durationInput');
 
-  // Initialize range fills
+  // Initialize all range fills on load
   updateRangeFill(amountSlider);
   updateRangeFill(rateSlider);
   updateRangeFill(durationSlider);
 
+  // Amount slider events
   amountSlider.addEventListener('input', (e) => {
     amountInput.value = e.target.value;
     updateRangeFill(e.target);
@@ -119,6 +125,7 @@ export default function decorate(block) {
     updateEMI();
   });
 
+  // Rate slider events
   rateSlider.addEventListener('input', (e) => {
     rateInput.value = e.target.value;
     updateRangeFill(e.target);
@@ -130,6 +137,7 @@ export default function decorate(block) {
     updateEMI();
   });
 
+  // Duration slider events
   durationSlider.addEventListener('input', (e) => {
     durationInput.value = e.target.value;
     updateRangeFill(e.target);
@@ -141,5 +149,6 @@ export default function decorate(block) {
     updateEMI();
   });
 
+  // Initial calculation
   updateEMI();
 }

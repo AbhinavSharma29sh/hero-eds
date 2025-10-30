@@ -383,14 +383,14 @@
       {
         "component": "text",
         "name": "ranges",
-        "label": "Ranges (format: minAmount-maxAmount-defaultAmount|minRate-maxRate-defaultRate|minDuration-maxDuration-defaultDuration)",
-        "value": "10000-100000-80500|8-15-13|12-60-12",
+        "label": "Min-Max Ranges (Amount Min-Max | Rate Min-Max | Duration Min-Max)",
+        "value": "10000-100000|8-15|12-60",
         "valueType": "string"
       },
       {
         "component": "text",
         "name": "cta",
-        "label": "CTA (format: text|link)",
+        "label": "CTA Button (Text|Link)",
         "value": "CHECK LOAN OFFERS|#",
         "valueType": "string"
       },
