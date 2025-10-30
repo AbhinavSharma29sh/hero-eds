@@ -382,16 +382,16 @@
       },
       {
         "component": "text",
-        "name": "buttontext",
-        "label": "CTA Button Text",
-        "value": "CHECK LOAN OFFERS",
+        "name": "ranges",
+        "label": "Ranges (format: minAmount-maxAmount-defaultAmount|minRate-maxRate-defaultRate|minDuration-maxDuration-defaultDuration)",
+        "value": "10000-100000-80500|8-15-13|12-60-12",
         "valueType": "string"
       },
       {
         "component": "text",
-        "name": "buttonlink",
-        "label": "CTA Button Link",
-        "value": "#",
+        "name": "cta",
+        "label": "CTA (format: text|link)",
+        "value": "CHECK LOAN OFFERS|#",
         "valueType": "string"
       },
       {

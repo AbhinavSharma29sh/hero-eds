@@ -57,18 +57,17 @@
     font-size: 0.95rem;
 }
 
-.emi-control input[type="range"] {
+.emi-range-slider {
     width: 100%;
     height: 8px;
     appearance: none;
-    background: linear-gradient(to right, #d32f2f 0%, #d32f2f 50%, #ddd 50%, #ddd 100%);
     border-radius: 5px;
     outline: none;
     cursor: pointer;
     will-change: transform;
 }
 
-.emi-control input[type="range"]::-webkit-slider-thumb {
+.emi-range-slider::-webkit-slider-thumb {
     appearance: none;
     width: 20px;
     height: 20px;
@@ -79,7 +78,7 @@
     box-shadow: 0 2px 6px rgb(0 0 0 / 20%);
 }
 
-.emi-control input[type="range"]::-moz-range-thumb {
+.emi-range-slider::-moz-range-thumb {
     width: 20px;
     height: 20px;
     background: #d32f2f;
@@ -130,6 +129,7 @@
 }
 
 .emi-cta-btn {
+    display: inline-block;
     background: #d32f2f;
     color: #fff;
     border: none;
@@ -138,6 +138,7 @@
     font-weight: 600;
     border-radius: 4px;
     cursor: pointer;
+    text-decoration: none;
     transition: background 0.2s;
     margin-bottom: 20px;
 }
@@ -158,7 +159,7 @@
     filter: drop-shadow(0 4px 12px rgb(0 0 0 / 30%));
 }
 
-@media (width <=768px) {
+@media (width <= 768px) {
     .emi-container {
         flex-direction: column;
     }
