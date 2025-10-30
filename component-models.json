@@ -383,23 +383,23 @@
       {
         "component": "text",
         "name": "buttontext",
-        "label": "Button Text",
+        "label": "CTA Button Text",
         "value": "CHECK LOAN OFFERS",
         "valueType": "string"
       },
       {
         "component": "text",
         "name": "buttonlink",
-        "label": "Button Link",
+        "label": "CTA Button Link",
         "value": "#",
         "valueType": "string"
       },
       {
-        "component": "text",
-        "name": "imageurl",
-        "label": "Bike Image URL",
+        "component": "reference",
+        "name": "bikeimage",
+        "label": "Bike Image",
         "value": "",
-        "valueType": "string"
+        "multi": false
       }
     ]
   }

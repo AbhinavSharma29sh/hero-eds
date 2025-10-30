@@ -1,7 +1,11 @@
 export default function decorate(block) {
-  const [titleRow] = block.children;
+  const rows = Array.from(block.children);
 
-  const title = titleRow?.textContent.trim() || 'CALCULATE EMI AND KNOW YOUR GAINS';
+  // Extract authored values
+  const title = rows[0]?.textContent.trim() || 'CALCULATE EMI AND KNOW YOUR GAINS';
+  const buttonText = rows[1]?.textContent.trim() || 'CHECK LOAN OFFERS';
+  const buttonLink = rows[2]?.textContent.trim() || '#';
+  const bikeImageSrc = rows[3]?.querySelector('img')?.src || rows[3]?.textContent.trim() || 'https://bd.gaadicdn.com/processedimages/hero/splendor-plus/source/splendor-plus6409d99be0173.jpg';
 
   const minAmount = 10000;
   const maxAmount = 100000;
@@ -61,9 +65,9 @@ export default function decorate(block) {
         <div class="emi-result-card">
           <p class="emi-result-label">Monthly Payment (EMI)</p>
           <h2 class="emi-result-amount" id="emiResult">₹ 7,190</h2>
-          <button class="emi-cta-btn">CHECK LOAN OFFERS</button>
+          <a href="${buttonLink}" class="emi-cta-btn">${buttonText}</a>
           <div class="emi-bike-container">
-            <img loading="lazy" src="https://bd.gaadicdn.com/processedimages/hero/splendor-plus/source/splendor-plus6409d99be0173.jpg" alt="Hero Bike" class="emi-bike-img" width="200" height="150"/>
+            <img loading="lazy" src="${bikeImageSrc}" alt="Hero Bike" class="emi-bike-img" width="200" height="150"/>
           </div>
         </div>
       </div>
