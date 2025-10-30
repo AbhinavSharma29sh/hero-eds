@@ -1,0 +1,145 @@
+.faq-wrapper {
+    padding: 60px 20px;
+    background: #fff;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.faq-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.faq-tag {
+    display: inline-block;
+    color: #d32f2f;
+    font-weight: 700;
+    font-size: 0.875rem;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+
+.faq-subtitle {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #000;
+    margin: 0;
+    letter-spacing: -0.5px;
+}
+
+.faq-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.faq-item {
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: box-shadow 0.2s ease;
+    will-change: box-shadow;
+}
+
+.faq-item:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.faq-question {
+    width: 100%;
+    padding: 20px 24px;
+    background: #f9f9f9;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #000;
+    text-align: left;
+    transition: background-color 0.2s ease;
+}
+
+.faq-question:hover {
+    background: #f0f0f0;
+}
+
+.faq-question.active {
+    background: #fff;
+    color: #d32f2f;
+}
+
+.faq-question span {
+    flex: 1;
+    line-height: 1.5;
+}
+
+.faq-arrow {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    color: #d32f2f;
+    transition: transform 0.3s ease;
+    will-change: transform;
+}
+
+.faq-question.active .faq-arrow {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    background: #fff;
+    border-top: 1px solid #e0e0e0;
+}
+
+.faq-answer-content {
+    padding: 24px;
+    color: #555;
+    line-height: 1.8;
+    font-size: 0.95rem;
+}
+
+.faq-answer-content p {
+    margin: 0;
+}
+
+.faq-answer-content p+p {
+    margin-top: 12px;
+}
+
+@media (max-width: 768px) {
+    .faq-wrapper {
+        padding: 40px 16px;
+    }
+
+    .faq-subtitle {
+        font-size: 1.75rem;
+    }
+
+    .faq-question {
+        padding: 16px 16px;
+        font-size: 0.95rem;
+    }
+
+    .faq-answer-content {
+        padding: 16px;
+        font-size: 0.9rem;
+    }
+
+    .faq-arrow {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .faq-item,
+    .faq-question,
+    .faq-arrow {
+        transition: none;
+    }
+}
