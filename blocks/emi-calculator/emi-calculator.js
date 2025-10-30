@@ -1,25 +1,22 @@
 export default function decorate(block) {
   const rows = Array.from(block.children);
 
-  // Extract authored values
   const title = rows[0]?.textContent.trim() || 'CALCULATE EMI AND KNOW YOUR GAINS';
-  const rangesStr = rows[1]?.textContent.trim() || '10000-100000|8-15|12-60';
-  const ctaStr = rows[2]?.textContent.trim() || 'CHECK LOAN OFFERS|#';
-  const bikeImageSrc = rows[3]?.querySelector('img')?.src || rows[3]?.textContent.trim() || 'https://bd.gaadicdn.com/processedimages/hero/splendor-plus/source/splendor-plus6409d99be0173.jpg';
 
-  // Parse ranges (min-max only, calculate default as middle)
+  const labelsStr = rows[1]?.textContent.trim() || 'Amount Needed (₹)|Interest rate (P.A)|Duration (Months)|Monthly Payment (EMI)';
+  const [amountLabel, rateLabel, durationLabel, resultLabel] = labelsStr.split('|');
+
+  const rangesStr = rows[2]?.textContent.trim() || '10000-100000-50000|8-15-12|12-60-24';
   const [amountRange, rateRange, durationRange] = rangesStr.split('|');
-  const [minAmount, maxAmount] = amountRange.split('-').map(Number);
-  const [minRate, maxRate] = rateRange.split('-').map(Number);
-  const [minDuration, maxDuration] = durationRange.split('-').map(Number);
+  const [minAmount, maxAmount, defaultAmount] = amountRange.split('-').map((val) => parseInt(val, 10));
+  const [minRate, maxRate, defaultRate] = rateRange.split('-').map(parseFloat);
+  const [minDuration, maxDuration, defaultDuration] = durationRange.split('-').map((val) => parseInt(val, 10));
 
-  // Calculate defaults (middle values)
-  const defaultAmount = Math.round((minAmount + maxAmount) / 2);
-  const defaultRate = ((minRate + maxRate) / 2).toFixed(1);
-  const defaultDuration = Math.round((minDuration + maxDuration) / 2);
-
-  // Parse CTA
-  const [buttonText, buttonLink] = ctaStr.split('|');
+  const ctaStr = rows[3]?.textContent.trim() || 'CHECK LOAN OFFERS|#|https://bd.gaadicdn.com/processedimages/hero/splendor-plus/source/splendor-plus6409d99be0173.jpg';
+  const ctaParts = ctaStr.split('|');
+  const buttonText = ctaParts[0] || 'CHECK LOAN OFFERS';
+  const buttonLink = ctaParts[1] || '#';
+  const bikeImageSrc = ctaParts[2] || 'https://bd.gaadicdn.com/processedimages/hero/splendor-plus/source/splendor-plus6409d99be0173.jpg';
 
   const wrapper = document.createElement('div');
   wrapper.className = 'emi-calculator-wrapper';
@@ -30,7 +27,7 @@ export default function decorate(block) {
       <div class="emi-left">
         <div class="emi-control">
           <div class="emi-control-header">
-            <label>Amount Needed (₹)</label>
+            <label>${amountLabel}</label>
             <input type="number" class="emi-input-box" id="amountInput" value="${defaultAmount}" min="${minAmount}" max="${maxAmount}"/>
           </div>
           <input type="range" id="amountRange" class="emi-range-slider" min="${minAmount}" max="${maxAmount}" step="500" value="${defaultAmount}"/>
@@ -42,7 +39,7 @@ export default function decorate(block) {
 
         <div class="emi-control">
           <div class="emi-control-header">
-            <label>Interest rate (P.A)</label>
+            <label>${rateLabel}</label>
             <input type="number" class="emi-input-box" id="rateInput" value="${defaultRate}" min="${minRate}" max="${maxRate}" step="0.1"/>
           </div>
           <input type="range" id="rateRange" class="emi-range-slider" min="${minRate}" max="${maxRate}" step="0.1" value="${defaultRate}"/>
@@ -54,7 +51,7 @@ export default function decorate(block) {
 
         <div class="emi-control">
           <div class="emi-control-header">
-            <label>Duration (Months)</label>
+            <label>${durationLabel}</label>
             <input type="number" class="emi-input-box" id="durationInput" value="${defaultDuration}" min="${minDuration}" max="${maxDuration}"/>
           </div>
           <input type="range" id="durationRange" class="emi-range-slider" min="${minDuration}" max="${maxDuration}" step="1" value="${defaultDuration}"/>
@@ -67,7 +64,7 @@ export default function decorate(block) {
 
       <div class="emi-right">
         <div class="emi-result-card">
-          <p class="emi-result-label">Monthly Payment (EMI)</p>
+          <p class="emi-result-label">${resultLabel}</p>
           <h2 class="emi-result-amount" id="emiResult">₹ 7,190</h2>
           <a href="${buttonLink}" class="emi-cta-btn">${buttonText}</a>
           <div class="emi-bike-container">
@@ -80,7 +77,6 @@ export default function decorate(block) {
 
   block.replaceChildren(wrapper);
 
-  // Update range slider fill dynamically (red moves with slider)
   function updateRangeFill(slider) {
     const percent = ((slider.value - slider.min) / (slider.max - slider.min)) * 100;
     slider.style.background = `linear-gradient(to right, #d32f2f 0%, #d32f2f ${percent}%, #ddd ${percent}%, #ddd 100%)`;
@@ -108,12 +104,10 @@ export default function decorate(block) {
   const durationSlider = document.getElementById('durationRange');
   const durationInput = document.getElementById('durationInput');
 
-  // Initialize all range fills on load
   updateRangeFill(amountSlider);
   updateRangeFill(rateSlider);
   updateRangeFill(durationSlider);
 
-  // Amount slider events
   amountSlider.addEventListener('input', (e) => {
     amountInput.value = e.target.value;
     updateRangeFill(e.target);
@@ -125,7 +119,6 @@ export default function decorate(block) {
     updateEMI();
   });
 
-  // Rate slider events
   rateSlider.addEventListener('input', (e) => {
     rateInput.value = e.target.value;
     updateRangeFill(e.target);
@@ -137,7 +130,6 @@ export default function decorate(block) {
     updateEMI();
   });
 
-  // Duration slider events
   durationSlider.addEventListener('input', (e) => {
     durationInput.value = e.target.value;
     updateRangeFill(e.target);
@@ -149,6 +141,5 @@ export default function decorate(block) {
     updateEMI();
   });
 
-  // Initial calculation
   updateEMI();
 }

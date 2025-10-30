@@ -376,30 +376,30 @@
       {
         "component": "text",
         "name": "title",
-        "label": "Calculator Title",
+        "label": "Calculator Main Title",
         "value": "CALCULATE EMI AND KNOW YOUR GAINS",
         "valueType": "string"
       },
       {
         "component": "text",
+        "name": "labels",
+        "label": "Labels (amountLabel|rateLabel|durationLabel|resultLabel)",
+        "value": "Amount Needed (₹)|Interest rate (P.A)|Duration (Months)|Monthly Payment (EMI)",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
         "name": "ranges",
-        "label": "Min-Max Ranges (Amount Min-Max | Rate Min-Max | Duration Min-Max)",
-        "value": "10000-100000|8-15|12-60",
+        "label": "Ranges (amountMin-Max-Default|rateMin-Max-Default|durationMin-Max-Default)",
+        "value": "10000-100000-50000|8-15-12|12-60-24",
         "valueType": "string"
       },
       {
         "component": "text",
         "name": "cta",
-        "label": "CTA Button (Text|Link)",
-        "value": "CHECK LOAN OFFERS|#",
+        "label": "CTA & Image (buttonText|buttonLink|imageURL)",
+        "value": "CHECK LOAN OFFERS|#|https://bd.gaadicdn.com/processedimages/hero/splendor-plus/source/splendor-plus6409d99be0173.jpg",
         "valueType": "string"
-      },
-      {
-        "component": "reference",
-        "name": "bikeimage",
-        "label": "Bike Image",
-        "value": "",
-        "multi": false
       }
     ]
   }
