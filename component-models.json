@@ -180,6 +180,130 @@
     ]
   },
   {
+    "id": "emi-calculator",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "title",
+        "label": "Calculator Main Title",
+        "value": "CALCULATE EMI AND KNOW YOUR GAINS"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "amountlabel",
+        "label": "Amount Label",
+        "value": "Amount Needed (₹)"
+      },
+      {
+        "component": "text",
+        "valueType": "number",
+        "name": "amountmin",
+        "label": "Amount Minimum",
+        "value": "10000"
+      },
+      {
+        "component": "text",
+        "valueType": "number",
+        "name": "amountmax",
+        "label": "Amount Maximum",
+        "value": "100000"
+      },
+      {
+        "component": "text",
+        "valueType": "number",
+        "name": "amountdefault",
+        "label": "Amount Default",
+        "value": "50000"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "ratelabel",
+        "label": "Interest Rate Label",
+        "value": "Interest rate (P.A)"
+      },
+      {
+        "component": "text",
+        "valueType": "number",
+        "name": "ratemin",
+        "label": "Rate Minimum",
+        "value": "8"
+      },
+      {
+        "component": "text",
+        "valueType": "number",
+        "name": "ratemax",
+        "label": "Rate Maximum",
+        "value": "15"
+      },
+      {
+        "component": "text",
+        "valueType": "number",
+        "name": "ratedefault",
+        "label": "Rate Default",
+        "value": "12"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "durationlabel",
+        "label": "Duration Label",
+        "value": "Duration (Months)"
+      },
+      {
+        "component": "text",
+        "valueType": "number",
+        "name": "durationmin",
+        "label": "Duration Minimum",
+        "value": "12"
+      },
+      {
+        "component": "text",
+        "valueType": "number",
+        "name": "durationmax",
+        "label": "Duration Maximum",
+        "value": "60"
+      },
+      {
+        "component": "text",
+        "valueType": "number",
+        "name": "durationdefault",
+        "label": "Duration Default",
+        "value": "24"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "resultlabel",
+        "label": "Result Label",
+        "value": "Monthly Payment (EMI)"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "buttontext",
+        "label": "Button Text",
+        "value": "CHECK LOAN OFFERS"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "buttonlink",
+        "label": "Button Link",
+        "value": "#"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "bikeimage",
+        "label": "Bike Image",
+        "multi": false
+      }
+    ]
+  },
+  {
     "id": "fragment",
     "fields": [
       {
@@ -211,194 +335,6 @@
         "name": "text",
         "value": "",
         "label": "Text",
-        "valueType": "string"
-      }
-    ]
-  },
-  {
-    "id": "feature-card",
-    "fields": [
-      {
-        "component": "reference",
-        "name": "image",
-        "label": "Image",
-        "multi": false
-      },
-      {
-        "component": "text",
-        "name": "title",
-        "label": "Title",
-        "valueType": "string"
-      },
-      {
-        "component": "richtext",
-        "name": "description",
-        "label": "Description",
-        "valueType": "string"
-      },
-      {
-        "component": "object",
-        "name": "cta",
-        "label": "CTA",
-        "collapsible": true,
-        "fields": [
-          {
-            "component": "aem-content",
-            "name": "link",
-            "label": "CTA Link"
-          },
-          {
-            "component": "text",
-            "name": "text",
-            "label": "CTA Text",
-            "valueType": "string"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "insight-panel",
-    "fields": [
-      {
-        "component": "text",
-        "name": "title",
-        "label": "Panel Title",
-        "valueType": "string"
-      },
-      {
-        "component": "richtext",
-        "name": "description",
-        "label": "Panel Description",
-        "valueType": "string"
-      },
-      {
-        "component": "reference",
-        "name": "image",
-        "label": "Panel Image",
-        "multi": false
-      },
-      {
-        "component": "object",
-        "name": "cta",
-        "label": "CTA",
-        "collapsible": true,
-        "fields": [
-          {
-            "component": "aem-content",
-            "name": "link",
-            "label": "CTA Link"
-          },
-          {
-            "component": "text",
-            "name": "text",
-            "label": "CTA Text",
-            "valueType": "string"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "emi-title",
-    "fields": [
-      {
-        "component": "text",
-        "name": "title",
-        "label": "Calculator Title",
-        "value": "CALCULATE EMI AND KNOW YOUR GAINS",
-        "valueType": "string"
-      }
-    ]
-  },
-  {
-    "id": "emi-range",
-    "fields": [
-      {
-        "component": "text",
-        "name": "label",
-        "label": "Range Label",
-        "value": "",
-        "valueType": "string"
-      },
-      {
-        "component": "text",
-        "name": "min",
-        "label": "Min Value",
-        "value": "",
-        "valueType": "string"
-      },
-      {
-        "component": "text",
-        "name": "max",
-        "label": "Max Value",
-        "value": "",
-        "valueType": "string"
-      },
-      {
-        "component": "text",
-        "name": "default",
-        "label": "Default Value",
-        "value": "",
-        "valueType": "string"
-      }
-    ]
-  },
-  {
-    "id": "emi-result",
-    "fields": [
-      {
-        "component": "text",
-        "name": "text",
-        "label": "CTA Button Text",
-        "value": "CHECK LOAN OFFERS",
-        "valueType": "string"
-      },
-      {
-        "component": "text",
-        "name": "ctaLink",
-        "label": "CTA Link",
-        "value": "#",
-        "valueType": "string"
-      },
-      {
-        "component": "text",
-        "name": "bikeImage",
-        "label": "Bike Image URL",
-        "value": "",
-        "valueType": "string"
-      }
-    ]
-  },
-  {
-    "id": "emi-calculator",
-    "fields": [
-      {
-        "component": "text",
-        "name": "title",
-        "label": "Calculator Main Title",
-        "value": "CALCULATE EMI AND KNOW YOUR GAINS",
-        "valueType": "string"
-      },
-      {
-        "component": "text",
-        "name": "labels",
-        "label": "Labels (amountLabel|rateLabel|durationLabel|resultLabel)",
-        "value": "Amount Needed (₹)|Interest rate (P.A)|Duration (Months)|Monthly Payment (EMI)",
-        "valueType": "string"
-      },
-      {
-        "component": "text",
-        "name": "ranges",
-        "label": "Ranges (amountMin-Max-Default|rateMin-Max-Default|durationMin-Max-Default)",
-        "value": "10000-100000-50000|8-15-12|12-60-24",
-        "valueType": "string"
-      },
-      {
-        "component": "text",
-        "name": "cta",
-        "label": "CTA & Image (buttonText|buttonLink|imageURL)",
-        "value": "CHECK LOAN OFFERS|#|https://bd.gaadicdn.com/processedimages/hero/splendor-plus/source/splendor-plus6409d99be0173.jpg",
         "valueType": "string"
       }
     ]

@@ -1,0 +1,146 @@
+{
+    "definitions": [
+        {
+            "title": "EMI Calculator",
+            "id": "emi-calculator",
+            "plugins": {
+                "xwalk": {
+                    "page": {
+                        "resourceType": "core/franklin/components/block/v1/block",
+                        "template": {
+                            "name": "EMI Calculator",
+                            "model": "emi-calculator"
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "models": [
+        {
+            "id": "emi-calculator",
+            "fields": [
+                {
+                    "component": "text",
+                    "valueType": "string",
+                    "name": "title",
+                    "label": "Calculator Main Title",
+                    "value": "CALCULATE EMI AND KNOW YOUR GAINS"
+                },
+                {
+                    "component": "text",
+                    "valueType": "string",
+                    "name": "amountlabel",
+                    "label": "Amount Label",
+                    "value": "Amount Needed (₹)"
+                },
+                {
+                    "component": "text",
+                    "valueType": "number",
+                    "name": "amountmin",
+                    "label": "Amount Minimum",
+                    "value": "10000"
+                },
+                {
+                    "component": "text",
+                    "valueType": "number",
+                    "name": "amountmax",
+                    "label": "Amount Maximum",
+                    "value": "100000"
+                },
+                {
+                    "component": "text",
+                    "valueType": "number",
+                    "name": "amountdefault",
+                    "label": "Amount Default",
+                    "value": "50000"
+                },
+                {
+                    "component": "text",
+                    "valueType": "string",
+                    "name": "ratelabel",
+                    "label": "Interest Rate Label",
+                    "value": "Interest rate (P.A)"
+                },
+                {
+                    "component": "text",
+                    "valueType": "number",
+                    "name": "ratemin",
+                    "label": "Rate Minimum",
+                    "value": "8"
+                },
+                {
+                    "component": "text",
+                    "valueType": "number",
+                    "name": "ratemax",
+                    "label": "Rate Maximum",
+                    "value": "15"
+                },
+                {
+                    "component": "text",
+                    "valueType": "number",
+                    "name": "ratedefault",
+                    "label": "Rate Default",
+                    "value": "12"
+                },
+                {
+                    "component": "text",
+                    "valueType": "string",
+                    "name": "durationlabel",
+                    "label": "Duration Label",
+                    "value": "Duration (Months)"
+                },
+                {
+                    "component": "text",
+                    "valueType": "number",
+                    "name": "durationmin",
+                    "label": "Duration Minimum",
+                    "value": "12"
+                },
+                {
+                    "component": "text",
+                    "valueType": "number",
+                    "name": "durationmax",
+                    "label": "Duration Maximum",
+                    "value": "60"
+                },
+                {
+                    "component": "text",
+                    "valueType": "number",
+                    "name": "durationdefault",
+                    "label": "Duration Default",
+                    "value": "24"
+                },
+                {
+                    "component": "text",
+                    "valueType": "string",
+                    "name": "resultlabel",
+                    "label": "Result Label",
+                    "value": "Monthly Payment (EMI)"
+                },
+                {
+                    "component": "text",
+                    "valueType": "string",
+                    "name": "buttontext",
+                    "label": "Button Text",
+                    "value": "CHECK LOAN OFFERS"
+                },
+                {
+                    "component": "text",
+                    "valueType": "string",
+                    "name": "buttonlink",
+                    "label": "Button Link",
+                    "value": "#"
+                },
+                {
+                    "component": "reference",
+                    "valueType": "string",
+                    "name": "bikeimage",
+                    "label": "Bike Image",
+                    "multi": false
+                }
+            ]
+        }
+    ],
+    "filters": []
+}
