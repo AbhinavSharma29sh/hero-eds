@@ -43,7 +43,7 @@
 }
 
 .faq-item:hover {
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 2px 8px rgb(0 0 0 / 8%);
 }
 
 .faq-question {
@@ -110,7 +110,7 @@
     margin-top: 12px;
 }
 
-@media (max-width: 768px) {
+@media (width <= 768px) {
     .faq-wrapper {
         padding: 40px 16px;
     }
@@ -120,7 +120,7 @@
     }
 
     .faq-question {
-        padding: 16px 16px;
+        padding: 16px;
         font-size: 0.95rem;
     }
 
@@ -136,7 +136,6 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-
     .faq-item,
     .faq-question,
     .faq-arrow {
