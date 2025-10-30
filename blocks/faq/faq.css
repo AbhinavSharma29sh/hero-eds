@@ -111,6 +111,18 @@
     overflow-wrap: break-word;
 }
 
+.faq-empty {
+    padding: 40px 20px;
+    text-align: center;
+    color: #999;
+    font-style: italic;
+}
+
+.faq-empty p {
+    margin: 0;
+    font-size: 0.95rem;
+}
+
 .faq-answer-content p+p {
     margin-top: 12px;
 }

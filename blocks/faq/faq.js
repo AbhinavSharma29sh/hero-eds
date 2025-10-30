@@ -6,14 +6,36 @@ export default function decorate(block) {
 
   const faqItems = [];
 
-  for (let i = 2; i < rows.length; i += 1) {
-    const cells = Array.from(rows[i]);
-    if (cells.length >= 2) {
-      const question = cells[0]?.textContent.trim();
-      const answer = cells[1]?.innerHTML || '';
+  // Handle multi-item container structure
+  if (rows.length > 2) {
+    // Method 1: Check if rows[2] contains the FAQ items (multi-container)
+    const faqContainer = rows[2];
+    const faqRows = faqContainer ? Array.from(faqContainer.children) : [];
 
-      if (question && answer) {
-        faqItems.push({ question, answer });
+    faqRows.forEach((faqRow) => {
+      const cells = Array.from(faqRow.children || []);
+      if (cells.length >= 2) {
+        const question = cells[0]?.textContent.trim();
+        const answer = cells[1]?.innerHTML || '';
+
+        if (question && answer) {
+          faqItems.push({ question, answer });
+        }
+      }
+    });
+
+    // Fallback: If no items found, try direct rows
+    if (faqItems.length === 0) {
+      for (let i = 2; i < rows.length; i += 1) {
+        const cells = Array.from(rows[i].children || []);
+        if (cells.length >= 2) {
+          const question = cells[0]?.textContent.trim();
+          const answer = cells[1]?.innerHTML || '';
+
+          if (question && answer) {
+            faqItems.push({ question, answer });
+          }
+        }
       }
     }
   }
@@ -29,27 +51,35 @@ export default function decorate(block) {
       <div class="faq-accordion" id="faqAccordion">
   `;
 
-  faqItems.forEach((item, idx) => {
-    const itemId = `faq-item-${idx}`;
-    const isActive = idx === 0 ? 'active show' : '';
-
+  if (faqItems.length === 0) {
     faqHTML += `
-      <div class="faq-item">
-        <button class="faq-question ${isActive}" type="button" data-bs-toggle="collapse" data-bs-target="#${itemId}" aria-expanded="${idx === 0 ? 'true' : 'false'}" aria-controls="${itemId}">
-          <span class="faq-question-text">${item.question}</span>
-          <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-            <polyline points="6 9 12 15 18 9"></polyline>
-          </svg>
-        </button>
-        <div id="${itemId}" class="faq-answer collapse ${isActive}" data-bs-parent="#faqAccordion">
-          <div class="faq-answer-content">
-            ${item.answer}
+      <div class="faq-empty">
+        <p>No FAQ items configured</p>
+      </div>
+    `;
+  } else {
+    faqItems.forEach((item, idx) => {
+      const itemId = `faq-item-${idx}`;
+      const isActive = idx === 0 ? 'active show' : '';
+
+      faqHTML += `
+        <div class="faq-item">
+          <button class="faq-question ${isActive}" type="button" data-bs-toggle="collapse" data-bs-target="#${itemId}" aria-expanded="${idx === 0 ? 'true' : 'false'}" aria-controls="${itemId}">
+            <span class="faq-question-text">${item.question}</span>
+            <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div id="${itemId}" class="faq-answer collapse ${isActive}" data-bs-parent="#faqAccordion">
+            <div class="faq-answer-content">
+              ${item.answer}
+            </div>
           </div>
         </div>
-      </div>
-      <div class="faq-divider"></div>
-    `;
-  });
+        <div class="faq-divider"></div>
+      `;
+    });
+  }
 
   faqHTML += `
       </div>
