@@ -1,23 +1,19 @@
 export default function decorate(block) {
-  const props = Array.from(block.children).map((ele) => ele.children);
+  const rows = Array.from(block.children);
 
-  const title = props[0][0]?.textContent.trim() || 'CALCULATE EMI AND KNOW YOUR GAINS';
-  const amountLabel = props[1][0]?.textContent.trim() || 'Amount Needed (₹)';
-  const minAmount = parseInt(props[2][0]?.textContent.trim(), 10) || 10000;
-  const maxAmount = parseInt(props[3][0]?.textContent.trim(), 10) || 100000;
-  const defaultAmount = parseInt(props[4][0]?.textContent.trim(), 10) || 50000;
-  const rateLabel = props[5][0]?.textContent.trim() || 'Interest rate (P.A)';
-  const minRate = parseFloat(props[6][0]?.textContent.trim()) || 8;
-  const maxRate = parseFloat(props[7][0]?.textContent.trim()) || 15;
-  const defaultRate = parseFloat(props[8][0]?.textContent.trim()) || 12;
-  const durationLabel = props[9][0]?.textContent.trim() || 'Duration (Months)';
-  const minDuration = parseInt(props[10][0]?.textContent.trim(), 10) || 12;
-  const maxDuration = parseInt(props[11][0]?.textContent.trim(), 10) || 60;
-  const defaultDuration = parseInt(props[12][0]?.textContent.trim(), 10) || 24;
-  const resultLabel = props[13][0]?.textContent.trim() || 'Monthly Payment (EMI)';
-  const buttonText = props[14][0]?.textContent.trim() || 'CHECK LOAN OFFERS';
-  const buttonLink = props[15][0]?.textContent.trim() || '#';
-  const bikeImageSrc = props[16][0]?.querySelector('img')?.src || 'https://bd.gaadicdn.com/processedimages/hero/splendor-plus/source/splendor-plus6409d99be0173.jpg';
+  const titlesStr = rows[0]?.[0]?.textContent.trim() || 'CALCULATE EMI AND KNOW YOUR GAINS|Amount Needed (₹)|Interest rate (P.A)|Duration (Months)|Monthly Payment (EMI)';
+  const [mainTitle, amountLabel, rateLabel, durationLabel, resultLabel] = titlesStr.split('|');
+
+  const rangesStr = rows[1]?.[0]?.textContent.trim() || '10000-100000-50000|8-15-12|12-60-24';
+  const [amountRange, rateRange, durationRange] = rangesStr.split('|');
+  const [minAmount, maxAmount, defaultAmount] = amountRange.split('-').map((val) => parseInt(val, 10));
+  const [minRate, maxRate, defaultRate] = rateRange.split('-').map(parseFloat);
+  const [minDuration, maxDuration, defaultDuration] = durationRange.split('-').map((val) => parseInt(val, 10));
+
+  const ctaStr = rows[2]?.[0]?.textContent.trim() || 'CHECK LOAN OFFERS|#';
+  const [buttonText, buttonLink] = ctaStr.split('|');
+
+  const bikeImageSrc = rows[3]?.[0]?.querySelector('img')?.src || 'https://bd.gaadicdn.com/processedimages/hero/splendor-plus/source/splendor-plus6409d99be0173.jpg';
 
   block.innerHTML = '';
 
@@ -25,7 +21,7 @@ export default function decorate(block) {
   wrapper.className = 'emi-calculator-wrapper';
 
   wrapper.innerHTML = `
-    <h2 class="emi-title">${title}</h2>
+    <h2 class="emi-title">${mainTitle}</h2>
     <div class="emi-container">
       <div class="emi-left">
         <div class="emi-control">

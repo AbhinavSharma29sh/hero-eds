@@ -24,33 +24,32 @@
                     "component": "text",
                     "valueType": "string",
                     "name": "faqtitle",
-                    "label": "Section Title",
+                    "label": "Section Title (Red)",
                     "value": "GOT QUESTIONS?"
                 },
                 {
                     "component": "text",
                     "valueType": "string",
                     "name": "faqsubtitle",
-                    "label": "Section Subtitle",
+                    "label": "Section Subtitle (Large)",
                     "value": "We've Got Answers"
                 },
                 {
                     "component": "container",
-                    "valueType": "string",
-                    "name": "faqs",
+                    "name": "faqitems",
                     "label": "FAQ Items",
                     "multi": true,
                     "fields": [
                         {
                             "component": "text",
                             "valueType": "string",
-                            "name": "faqquestion",
+                            "name": "question",
                             "label": "Question"
                         },
                         {
                             "component": "richtext",
                             "valueType": "string",
-                            "name": "faqanswer",
+                            "name": "answer",
                             "label": "Answer"
                         }
                     ]

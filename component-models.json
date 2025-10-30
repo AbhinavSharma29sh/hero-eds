@@ -180,39 +180,71 @@
     ]
   },
   {
+    "id": "emi-calculator",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "titles",
+        "label": "Titles (mainTitle|amountLabel|rateLabel|durationLabel|resultLabel)",
+        "value": "CALCULATE EMI AND KNOW YOUR GAINS|Amount Needed (₹)|Interest rate (P.A)|Duration (Months)|Monthly Payment (EMI)"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "ranges",
+        "label": "Ranges (amountMin-Max-Def|rateMin-Max-Def|durationMin-Max-Def)",
+        "value": "10000-100000-50000|8-15-12|12-60-24"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "cta",
+        "label": "CTA (buttonText|buttonLink)",
+        "value": "CHECK LOAN OFFERS|#"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "bikeimage",
+        "label": "Bike Image",
+        "multi": false
+      }
+    ]
+  },
+  {
     "id": "faq",
     "fields": [
       {
         "component": "text",
         "valueType": "string",
         "name": "faqtitle",
-        "label": "Section Title",
+        "label": "Section Title (Red)",
         "value": "GOT QUESTIONS?"
       },
       {
         "component": "text",
         "valueType": "string",
         "name": "faqsubtitle",
-        "label": "Section Subtitle",
+        "label": "Section Subtitle (Large)",
         "value": "We've Got Answers"
       },
       {
         "component": "container",
-        "valueType": "string",
-        "name": "faqs",
+        "name": "faqitems",
         "label": "FAQ Items",
         "multi": true,
         "fields": [
           {
             "component": "text",
             "valueType": "string",
-            "name": "faqquestion",
+            "name": "question",
             "label": "Question"
           },
           {
             "component": "richtext",
             "valueType": "string",
-            "name": "faqanswer",
+            "name": "answer",
             "label": "Answer"
           }
         ]
