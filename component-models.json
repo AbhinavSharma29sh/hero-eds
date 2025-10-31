@@ -219,41 +219,33 @@
     "id": "subheader",
     "fields": [
       {
-        "component": "text",
-        "valueType": "string",
-        "name": "subheader_title",
-        "label": "Subheader Title"
-      },
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "menuItems",
-        "label": "Menu Items",
-        "multi": true,
-        "referenceType": "menuItem"
-      }
-    ]
-  },
-  {
-    "id": "menuItem",
-    "fields": [
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "menu_item-id",
-        "label": "Menu Item ID"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "menu_item-icon",
-        "label": "Menu Item Icon"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "menu_item-label",
-        "label": "Menu Item Label"
+        "component": "object",
+        "name": "subheader_featurenames",
+        "label": "Menu Feature Names",
+        "fields": [
+          {
+            "component": "array",
+            "name": "items",
+            "label": "Menu Items",
+            "itemFields": [
+              {
+                "component": "text",
+                "name": "id",
+                "label": "ID"
+              },
+              {
+                "component": "text",
+                "name": "icon",
+                "label": "Icon"
+              },
+              {
+                "component": "text",
+                "name": "label",
+                "label": "Label"
+              }
+            ]
+          }
+        ]
       }
     ]
   }
