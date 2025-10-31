@@ -294,73 +294,37 @@
         "component": "text",
         "valueType": "string",
         "name": "faqtitle",
-        "label": "Section Title"
+        "label": "Section Title",
+        "required": false
       },
       {
         "component": "text",
         "valueType": "string",
         "name": "faqsubtitle",
-        "label": "Section Subtitle"
+        "label": "Section Subtitle",
+        "required": false
       },
       {
-        "component": "text",
-        "valueType": "string",
-        "name": "faqitems_question1",
-        "label": "Question 1"
-      },
-      {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "faqitems_answer1",
-        "label": "Answer 1"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "faqitems_question2",
-        "label": "Question 2"
-      },
-      {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "faqitems_answer2",
-        "label": "Answer 2"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "faqitems_question3",
-        "label": "Question 3"
-      },
-      {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "faqitems_answer3",
-        "label": "Answer 3"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "faqitems_question4",
-        "label": "Question 4"
-      },
-      {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "faqitems_answer4",
-        "label": "Answer 4"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "faqitems_question5",
-        "label": "Question 5"
-      },
-      {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "faqitems_answer5",
-        "label": "Answer 5"
+        "component": "container",
+        "name": "faqitems",
+        "label": "FAQ Items",
+        "multi": true,
+        "fields": [
+          {
+            "component": "text",
+            "valueType": "string",
+            "name": "question",
+            "label": "Question",
+            "required": true
+          },
+          {
+            "component": "richtext",
+            "valueType": "string",
+            "name": "answer",
+            "label": "Answer",
+            "required": true
+          }
+        ]
       }
     ]
   },
