@@ -1,11 +1,16 @@
 export default function decorate(block) {
   const rows = Array.from(block.children);
+
   const title = rows[0]?.[0]?.textContent?.trim() || '';
   const links = [];
+
   for (let i = 1; i < rows.length; i += 2) {
-    const text = rows[i]?.[0]?.textContent?.trim();
-    const url = rows[i + 1]?.[0]?.querySelector('a')?.href || '#';
-    if (text) links.push({ text, url });
+    const text = rows[i]?.[0]?.textContent?.trim() || '';
+
+    const url = rows[i + 1]?.[0]?.querySelector('a')?.href || '';
+    if (text) {
+      links.push({ text, url });
+    }
   }
 
   block.innerHTML = `
