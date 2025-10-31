@@ -1,17 +1,35 @@
 export default function decorate(block) {
   const rows = Array.from(block.children);
 
-  const faqTitle = rows[0]?.[0]?.textContent.trim() || 'GOT QUESTIONS?';
-  const faqSubtitle = rows[1]?.[0]?.textContent.trim() || "We've Got Answers";
-
+  let faqTitle = 'GOT QUESTIONS?';
+  let faqSubtitle = "We've Got Answers";
   const faqItems = [];
 
-  for (let i = 2; i < rows.length; i += 2) {
-    const question = rows[i]?.[0]?.textContent.trim();
-    const answer = rows[i + 1]?.[0]?.innerHTML || '';
+  if (rows.length > 0) {
+    const firstRowCells = Array.from(rows[0].children || []);
+    if (firstRowCells.length > 0) {
+      faqTitle = firstRowCells[0].textContent?.trim() || faqTitle;
+    }
+    if (firstRowCells.length > 1) {
+      faqSubtitle = firstRowCells[1].textContent?.trim() || faqSubtitle;
+    }
+  }
 
-    if (question && answer) {
-      faqItems.push({ question, answer });
+  if (rows.length > 1) {
+    const settingsRowCells = Array.from(rows[1].children || []);
+
+    for (let i = 0; i < settingsRowCells.length; i += 2) {
+      const questionCell = settingsRowCells[i];
+      const answerCell = settingsRowCells[i + 1];
+
+      if (questionCell && answerCell) {
+        const question = questionCell.textContent?.trim();
+        const answer = answerCell.innerHTML || '';
+
+        if (question) {
+          faqItems.push({ question, answer });
+        }
+      }
     }
   }
 
