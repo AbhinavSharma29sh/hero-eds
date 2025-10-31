@@ -24,7 +24,7 @@
     margin: 0;
 }
 
-.menu-item a.menu {
+.subheader-item a.menu {
     display: flex;
     align-items: center;
     padding: 0 8px;
@@ -33,7 +33,7 @@
     color: rgb(48 48 48);
 }
 
-.menu-item a.menu:hover {
+.subheader-item a.menu:hover {
     color: red;
 }
 

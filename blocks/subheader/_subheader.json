@@ -15,6 +15,22 @@
                     }
                 }
             }
+        },
+        {
+            "title": "Subheader Item",
+            "id": "subheader_item",
+            "plugins": {
+                "xwalk": {
+                    "page": {
+                        "resourceType": "core/franklin/components/block/v1/block/item",
+                        "template": {
+                            "name": "Subheader Item",
+                            "model": "subheader_item",
+                            "classes": "subheader-item"
+                        }
+                    }
+                }
+            }
         }
     ],
     "models": [
@@ -22,33 +38,35 @@
             "id": "subheader",
             "fields": [
                 {
-                    "component": "object",
-                    "name": "subheader_featurenames",
-                    "label": "Menu Feature Names",
-                    "fields": [
-                        {
-                            "component": "array",
-                            "name": "items",
-                            "label": "Menu Items",
-                            "itemFields": [
-                                {
-                                    "component": "text",
-                                    "name": "id",
-                                    "label": "ID"
-                                },
-                                {
-                                    "component": "text",
-                                    "name": "icon",
-                                    "label": "Icon"
-                                },
-                                {
-                                    "component": "text",
-                                    "name": "label",
-                                    "label": "Label"
-                                }
-                            ]
-                        }
-                    ]
+                    "component": "text",
+                    "valueType": "string",
+                    "name": "subheader_title",
+                    "label": "Subheader Section Title"
+                },
+                {
+                    "component": "reference",
+                    "valueType": "string",
+                    "name": "subheader_items",
+                    "label": "Subheader Items",
+                    "multi": true,
+                    "referenceType": "subheader_item"
+                }
+            ]
+        },
+        {
+            "id": "subheader_item",
+            "fields": [
+                {
+                    "component": "text",
+                    "valueType": "string",
+                    "name": "icon",
+                    "label": "Subheader Icon"
+                },
+                {
+                    "component": "text",
+                    "valueType": "string",
+                    "name": "label",
+                    "label": "Subheader Label"
                 }
             ]
         }
@@ -56,43 +74,38 @@
     "filters": [
         {
             "id": "subheader",
-            "components": []
+            "components": [
+                "subheader_item"
+            ]
         }
     ],
     "subheader": {
-        "subheader_featurenames": {
-            "items": [
-                {
-                    "id": "OVERVIEW",
-                    "icon": "heroicon-open-eye",
-                    "label": "Overview"
-                },
-                {
-                    "id": "FEATURES",
-                    "icon": "heroicon-bike",
-                    "label": "FEATURES"
-                },
-                {
-                    "id": "PRICE",
-                    "icon": "heroicon-wallet-money",
-                    "label": "PRICE"
-                },
-                {
-                    "id": "COMPARE",
-                    "icon": "heroicon-exchange",
-                    "label": "COMPARE"
-                },
-                {
-                    "id": "SPECIFICATION",
-                    "icon": "heroicon-settings",
-                    "label": "Specifications"
-                },
-                {
-                    "id": "FIND-DEALER",
-                    "icon": "heroicon-delear-locator",
-                    "label": "Find a Dealer"
-                }
-            ]
-        }
+        "subheader_title": "Bike Subheader",
+        "subheader_items": [
+            {
+                "icon": "heroicon-open-eye",
+                "label": "Overview"
+            },
+            {
+                "icon": "heroicon-bike",
+                "label": "FEATURES"
+            },
+            {
+                "icon": "heroicon-wallet-money",
+                "label": "PRICE"
+            },
+            {
+                "icon": "heroicon-exchange",
+                "label": "COMPARE"
+            },
+            {
+                "icon": "heroicon-settings",
+                "label": "Specifications"
+            },
+            {
+                "icon": "heroicon-delear-locator",
+                "label": "Find a Dealer"
+            }
+        ]
     }
 }

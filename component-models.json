@@ -219,33 +219,35 @@
     "id": "subheader",
     "fields": [
       {
-        "component": "object",
-        "name": "subheader_featurenames",
-        "label": "Menu Feature Names",
-        "fields": [
-          {
-            "component": "array",
-            "name": "items",
-            "label": "Menu Items",
-            "itemFields": [
-              {
-                "component": "text",
-                "name": "id",
-                "label": "ID"
-              },
-              {
-                "component": "text",
-                "name": "icon",
-                "label": "Icon"
-              },
-              {
-                "component": "text",
-                "name": "label",
-                "label": "Label"
-              }
-            ]
-          }
-        ]
+        "component": "text",
+        "valueType": "string",
+        "name": "subheader_title",
+        "label": "Subheader Section Title"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "subheader_items",
+        "label": "Subheader Items",
+        "multi": true,
+        "referenceType": "subheader_item"
+      }
+    ]
+  },
+  {
+    "id": "subheader_item",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "icon",
+        "label": "Subheader Icon"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "label",
+        "label": "Subheader Label"
       }
     ]
   }

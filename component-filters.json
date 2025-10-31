@@ -42,6 +42,8 @@
   },
   {
     "id": "subheader",
-    "components": []
+    "components": [
+      "subheader_item"
+    ]
   }
 ]

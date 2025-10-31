@@ -172,6 +172,22 @@
               }
             }
           }
+        },
+        {
+          "title": "Subheader Item",
+          "id": "subheader_item",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Subheader Item",
+                  "model": "subheader_item",
+                  "classes": "subheader-item"
+                }
+              }
+            }
+          }
         }
       ]
     }
