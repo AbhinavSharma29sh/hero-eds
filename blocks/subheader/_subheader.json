@@ -9,7 +9,24 @@
                         "resourceType": "core/franklin/components/block/v1/block",
                         "template": {
                             "name": "Subheader",
-                            "model": "subheader"
+                            "model": "subheader",
+                            "filter": "subheader"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "title": "Menu Item",
+            "id": "menuItem",
+            "plugins": {
+                "xwalk": {
+                    "page": {
+                        "resourceType": "core/franklin/components/block/v1/block/item",
+                        "template": {
+                            "name": "Menu Item",
+                            "model": "menuItem",
+                            "classes": "menu_item"
                         }
                     }
                 }
@@ -22,84 +39,50 @@
             "fields": [
                 {
                     "component": "text",
+                    "valueType": "string",
                     "name": "subheader_title",
-                    "label": "Subheader Title",
-                    "valueType": "string"
+                    "label": "Subheader Title"
+                },
+                {
+                    "component": "reference",
+                    "valueType": "string",
+                    "name": "menuItems",
+                    "label": "Menu Items",
+                    "multi": true,
+                    "referenceType": "menuItem"
+                }
+            ]
+        },
+        {
+            "id": "menuItem",
+            "fields": [
+                {
+                    "component": "text",
+                    "valueType": "string",
+                    "name": "menu_item-id",
+                    "label": "Menu Item ID"
                 },
                 {
                     "component": "text",
-                    "name": "subheader_link1-text",
-                    "label": "Menu Link 1 Text",
-                    "valueType": "string"
-                },
-                {
-                    "component": "aem-content",
-                    "name": "subheader_link1-url",
-                    "label": "Menu Link 1 URL",
-                    "valueType": "string"
+                    "valueType": "string",
+                    "name": "menu_item-icon",
+                    "label": "Menu Item Icon"
                 },
                 {
                     "component": "text",
-                    "name": "subheader_link2-text",
-                    "label": "Menu Link 2 Text",
-                    "valueType": "string"
-                },
-                {
-                    "component": "aem-content",
-                    "name": "subheader_link2-url",
-                    "label": "Menu Link 2 URL",
-                    "valueType": "string"
-                },
-                {
-                    "component": "text",
-                    "name": "subheader_link3-text",
-                    "label": "Menu Link 3 Text",
-                    "valueType": "string"
-                },
-                {
-                    "component": "aem-content",
-                    "name": "subheader_link3-url",
-                    "label": "Menu Link 3 URL",
-                    "valueType": "string"
-                },
-                {
-                    "component": "text",
-                    "name": "subheader_link4-text",
-                    "label": "Menu Link 4 Text",
-                    "valueType": "string"
-                },
-                {
-                    "component": "aem-content",
-                    "name": "subheader_link4-url",
-                    "label": "Menu Link 4 URL",
-                    "valueType": "string"
-                },
-                {
-                    "component": "text",
-                    "name": "subheader_link5-text",
-                    "label": "Menu Link 5 Text",
-                    "valueType": "string"
-                },
-                {
-                    "component": "aem-content",
-                    "name": "subheader_link5-url",
-                    "label": "Menu Link 5 URL",
-                    "valueType": "string"
-                },
-                {
-                    "component": "text",
-                    "name": "subheader_link6-text",
-                    "label": "Menu Link 6 Text",
-                    "valueType": "string"
-                },
-                {
-                    "component": "aem-content",
-                    "name": "subheader_link6-url",
-                    "label": "Menu Link 6 URL",
-                    "valueType": "string"
+                    "valueType": "string",
+                    "name": "menu_item-label",
+                    "label": "Menu Item Label"
                 }
             ]
         }
     ],
-    "filters": []
+    "filters": [
+        {
+            "id": "subheader",
+            "components": [
+                "menuItem"
+            ]
+        }
+    ]
 }

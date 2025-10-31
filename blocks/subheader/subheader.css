@@ -1,36 +1,42 @@
-.subheader {
-    width: 100%;
-    background: #fff;
-    border-bottom: 1px solid #eee;
-    padding: 4px 0;
-    display: flex;
-    justify-content: center;
-}
-
-.subheader-list {
+.header-sticky-menu {
     display: flex;
     align-items: center;
-    gap: 16px;
+    border-bottom: none;
+    box-sizing: border-box;
+    color: rgb(48 48 48);
+    font-family: TSTAR-PRO-Bold, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    height: 24px;
+    line-height: 20px;
+    width: 763.383px;
+    flex: 1 1 0%;
+    -webkit-box-align: center;
+    -webkit-box-flex: 1;
+}
+
+.header-brand-navbar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
     list-style: none;
-    padding: 0;
+    padding-left: 0;
     margin: 0;
 }
 
-.subheader-item a {
-    display: block;
-    padding: 8px 16px;
-    font-size: 1rem;
-    font-family: TSTAR-PRO-Bold, Arial, sans-serif;
-    color: #222;
-    text-transform: uppercase;
-    font-weight: bold;
+.menu-item a.menu {
+    display: flex;
+    align-items: center;
+    padding: 0 8px;
     text-decoration: none;
-    border-radius: 4px;
-    transition: background 0.17s, color 0.17s;
+    text-transform: uppercase;
+    color: rgb(48 48 48);
 }
 
-.subheader-item a:hover,
-.subheader-item a:focus {
-    background: #d32f2f;
-    color: #fff;
+.menu-item a.menu:hover {
+    color: red;
+}
+
+.hero-icon {
+    margin-right: 4px;
 }
