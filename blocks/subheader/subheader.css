@@ -5,16 +5,6 @@
     padding: 4px 0;
     display: flex;
     justify-content: center;
-    align-items: center;
-}
-
-.subheader-title {
-    font-weight: 900;
-    color: #222;
-    margin-right: 32px;
-    letter-spacing: 0.5px;
-    font-size: 1.1rem;
-    text-transform: uppercase;
 }
 
 .subheader-list {
