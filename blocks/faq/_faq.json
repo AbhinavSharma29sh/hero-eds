@@ -24,37 +24,25 @@
                     "component": "text",
                     "valueType": "string",
                     "name": "faqtitle",
-                    "label": "Section Title",
-                    "required": false
+                    "label": "Section Title"
                 },
                 {
                     "component": "text",
                     "valueType": "string",
                     "name": "faqsubtitle",
-                    "label": "Section Subtitle",
-                    "required": false
+                    "label": "Section Subtitle"
                 },
                 {
-                    "component": "container",
-                    "name": "faqitems",
-                    "label": "FAQ Items",
-                    "multi": true,
-                    "fields": [
-                        {
-                            "component": "text",
-                            "valueType": "string",
-                            "name": "question",
-                            "label": "Question",
-                            "required": true
-                        },
-                        {
-                            "component": "richtext",
-                            "valueType": "string",
-                            "name": "answer",
-                            "label": "Answer",
-                            "required": true
-                        }
-                    ]
+                    "component": "text",
+                    "valueType": "string",
+                    "name": "question",
+                    "label": "Question"
+                },
+                {
+                    "component": "richtext",
+                    "valueType": "string",
+                    "name": "answer",
+                    "label": "Answer"
                 }
             ]
         }

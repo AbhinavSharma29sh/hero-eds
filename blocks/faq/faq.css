@@ -123,10 +123,6 @@
     font-size: 0.95rem;
 }
 
-.faq-answer-content p+p {
-    margin-top: 12px;
-}
-
 .faq-divider {
     height: 1px;
     background: #e0e0e0;
