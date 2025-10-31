@@ -22,105 +22,105 @@
             "fields": [
                 {
                     "component": "text",
-                    "valueType": "string",
                     "name": "title",
-                    "label": "Main Title"
+                    "label": "Main Title",
+                    "valueType": "string"
                 },
                 {
                     "component": "text",
-                    "valueType": "string",
-                    "name": "settings_amountLabel",
-                    "label": "Amount Label"
+                    "name": "amount_label",
+                    "label": "Amount Label",
+                    "valueType": "string"
                 },
                 {
                     "component": "text",
-                    "valueType": "number",
-                    "name": "settings_amountMin",
-                    "label": "Amount Min"
+                    "name": "amount_min",
+                    "label": "Amount Min",
+                    "valueType": "number"
                 },
                 {
                     "component": "text",
-                    "valueType": "number",
-                    "name": "settings_amountMax",
-                    "label": "Amount Max"
+                    "name": "amount_max",
+                    "label": "Amount Max",
+                    "valueType": "number"
                 },
                 {
                     "component": "text",
-                    "valueType": "number",
-                    "name": "settings_amountDefault",
-                    "label": "Amount Default"
+                    "name": "amount_default",
+                    "label": "Amount Default",
+                    "valueType": "number"
                 },
                 {
                     "component": "text",
-                    "valueType": "string",
-                    "name": "settings_rateLabel",
-                    "label": "Rate Label"
+                    "name": "rate_label",
+                    "label": "Rate Label",
+                    "valueType": "string"
                 },
                 {
                     "component": "text",
-                    "valueType": "number",
-                    "name": "settings_rateMin",
-                    "label": "Rate Min"
+                    "name": "rate_min",
+                    "label": "Rate Min",
+                    "valueType": "number"
                 },
                 {
                     "component": "text",
-                    "valueType": "number",
-                    "name": "settings_rateMax",
-                    "label": "Rate Max"
+                    "name": "rate_max",
+                    "label": "Rate Max",
+                    "valueType": "number"
                 },
                 {
                     "component": "text",
-                    "valueType": "number",
-                    "name": "settings_rateDefault",
-                    "label": "Rate Default"
+                    "name": "rate_default",
+                    "label": "Rate Default",
+                    "valueType": "number"
                 },
                 {
                     "component": "text",
-                    "valueType": "string",
-                    "name": "settings_durationLabel",
-                    "label": "Duration Label"
+                    "name": "duration_label",
+                    "label": "Duration Label",
+                    "valueType": "string"
                 },
                 {
                     "component": "text",
-                    "valueType": "number",
-                    "name": "settings_durationMin",
-                    "label": "Duration Min"
+                    "name": "duration_min",
+                    "label": "Duration Min",
+                    "valueType": "number"
                 },
                 {
                     "component": "text",
-                    "valueType": "number",
-                    "name": "settings_durationMax",
-                    "label": "Duration Max"
+                    "name": "duration_max",
+                    "label": "Duration Max",
+                    "valueType": "number"
                 },
                 {
                     "component": "text",
-                    "valueType": "number",
-                    "name": "settings_durationDefault",
-                    "label": "Duration Default"
+                    "name": "duration_default",
+                    "label": "Duration Default",
+                    "valueType": "number"
                 },
                 {
                     "component": "text",
-                    "valueType": "string",
-                    "name": "settings_resultLabel",
-                    "label": "Result Label"
+                    "name": "result_label",
+                    "label": "Result Label",
+                    "valueType": "string"
                 },
                 {
                     "component": "text",
-                    "valueType": "string",
                     "name": "cta_text",
-                    "label": "Button Text"
+                    "label": "Button Text",
+                    "valueType": "string"
                 },
                 {
                     "component": "aem-content",
-                    "valueType": "string",
                     "name": "cta_link",
-                    "label": "Button Link"
+                    "label": "Button Link",
+                    "valueType": "string"
                 },
                 {
                     "component": "reference",
-                    "valueType": "string",
-                    "name": "bikeimage",
+                    "name": "bike_image",
                     "label": "Bike Image",
+                    "valueType": "string",
                     "multi": false
                 }
             ]
