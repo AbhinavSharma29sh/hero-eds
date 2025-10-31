@@ -23,23 +23,98 @@
                 {
                     "component": "text",
                     "valueType": "string",
-                    "name": "titles",
-                    "label": "Titles (mainTitle|amountLabel|rateLabel|durationLabel|resultLabel)",
-                    "value": "CALCULATE EMI AND KNOW YOUR GAINS|Amount Needed (₹)|Interest rate (P.A)|Duration (Months)|Monthly Payment (EMI)"
+                    "name": "title",
+                    "label": "Main Title"
                 },
                 {
                     "component": "text",
                     "valueType": "string",
-                    "name": "ranges",
-                    "label": "Ranges (amountMin-Max-Def|rateMin-Max-Def|durationMin-Max-Def)",
-                    "value": "10000-100000-50000|8-15-12|12-60-24"
+                    "name": "settings_amountLabel",
+                    "label": "Amount Label"
+                },
+                {
+                    "component": "text",
+                    "valueType": "number",
+                    "name": "settings_amountMin",
+                    "label": "Amount Min"
+                },
+                {
+                    "component": "text",
+                    "valueType": "number",
+                    "name": "settings_amountMax",
+                    "label": "Amount Max"
+                },
+                {
+                    "component": "text",
+                    "valueType": "number",
+                    "name": "settings_amountDefault",
+                    "label": "Amount Default"
                 },
                 {
                     "component": "text",
                     "valueType": "string",
-                    "name": "cta",
-                    "label": "CTA (buttonText|buttonLink)",
-                    "value": "CHECK LOAN OFFERS|#"
+                    "name": "settings_rateLabel",
+                    "label": "Rate Label"
+                },
+                {
+                    "component": "text",
+                    "valueType": "number",
+                    "name": "settings_rateMin",
+                    "label": "Rate Min"
+                },
+                {
+                    "component": "text",
+                    "valueType": "number",
+                    "name": "settings_rateMax",
+                    "label": "Rate Max"
+                },
+                {
+                    "component": "text",
+                    "valueType": "number",
+                    "name": "settings_rateDefault",
+                    "label": "Rate Default"
+                },
+                {
+                    "component": "text",
+                    "valueType": "string",
+                    "name": "settings_durationLabel",
+                    "label": "Duration Label"
+                },
+                {
+                    "component": "text",
+                    "valueType": "number",
+                    "name": "settings_durationMin",
+                    "label": "Duration Min"
+                },
+                {
+                    "component": "text",
+                    "valueType": "number",
+                    "name": "settings_durationMax",
+                    "label": "Duration Max"
+                },
+                {
+                    "component": "text",
+                    "valueType": "number",
+                    "name": "settings_durationDefault",
+                    "label": "Duration Default"
+                },
+                {
+                    "component": "text",
+                    "valueType": "string",
+                    "name": "settings_resultLabel",
+                    "label": "Result Label"
+                },
+                {
+                    "component": "text",
+                    "valueType": "string",
+                    "name": "cta_text",
+                    "label": "Button Text"
+                },
+                {
+                    "component": "aem-content",
+                    "valueType": "string",
+                    "name": "cta_link",
+                    "label": "Button Link"
                 },
                 {
                     "component": "reference",

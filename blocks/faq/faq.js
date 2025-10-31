@@ -6,37 +6,12 @@ export default function decorate(block) {
 
   const faqItems = [];
 
-  // Handle multi-item container structure
-  if (rows.length > 2) {
-    // Method 1: Check if rows[2] contains the FAQ items (multi-container)
-    const faqContainer = rows[2];
-    const faqRows = faqContainer ? Array.from(faqContainer.children) : [];
+  for (let i = 2; i < rows.length; i += 2) {
+    const question = rows[i]?.[0]?.textContent.trim();
+    const answer = rows[i + 1]?.[0]?.innerHTML || '';
 
-    faqRows.forEach((faqRow) => {
-      const cells = Array.from(faqRow.children || []);
-      if (cells.length >= 2) {
-        const question = cells[0]?.textContent.trim();
-        const answer = cells[1]?.innerHTML || '';
-
-        if (question && answer) {
-          faqItems.push({ question, answer });
-        }
-      }
-    });
-
-    // Fallback: If no items found, try direct rows
-    if (faqItems.length === 0) {
-      for (let i = 2; i < rows.length; i += 1) {
-        const cells = Array.from(rows[i].children || []);
-        if (cells.length >= 2) {
-          const question = cells[0]?.textContent.trim();
-          const answer = cells[1]?.innerHTML || '';
-
-          if (question && answer) {
-            faqItems.push({ question, answer });
-          }
-        }
-      }
+    if (question && answer) {
+      faqItems.push({ question, answer });
     }
   }
 
