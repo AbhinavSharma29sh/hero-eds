@@ -15,9 +15,7 @@
       "hero",
       "cards",
       "columns",
-      "fragment",
-      "emi-calculator",
-      "faq"
+      "fragment"
     ]
   },
   {
@@ -39,12 +37,6 @@
       "image",
       "button",
       "title"
-    ]
-  },
-  {
-    "id": "faq",
-    "components": [
-      "faq-item"
     ]
   }
 ]
